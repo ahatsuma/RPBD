@@ -1,0 +1,33 @@
+﻿<Window x:Class="RPBD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RPBD"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Background="#EDC34C" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="1" Margin="10">
+                <Button x:Name="AddLearnerBtn" Content="Добавить студента" FontSize="15" Click="AddLearnerBtn_Click" Background="Bisque"/>
+                <Button x:Name="deleteLearnerBtn" Content="Удалить студента" Margin="10" FontSize="15" Click="DeleteLearnerBtn_Click" Background="Aquamarine"/>
+            </StackPanel>
+        </Grid>
+        <DataGrid x:Name="learnersGrid" Grid.Column="1" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="idStud" Header="ID" Binding="{Binding LearnerId}"/>
+                <DataGridTextColumn x:Name="firstname" Header="Имя" Binding="{Binding FirstName}"/>
+                <DataGridTextColumn x:Name="lastname" Header="Фамилия" Binding="{Binding LastName}"/>
+                <DataGridTextColumn x:Name="groupss" Header="Группа" Binding="{Binding GroupName}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
